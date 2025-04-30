@@ -28,9 +28,9 @@ router.get('/:id', async (req, res) => {
 // Create a new task
 router.post('/', async (req, res) => {
   try {
-    const { title, description, deadline, email, time,userName } = req.body;
+    const { title, description, deadline, email, userName } = req.body;
     
-    if (!title || !deadline || !email || !userName || !time) {
+    if (!title || !deadline || !email || !userName ) {
       return res.status(400).json({ message: 'Title, deadline, email and userName,time are required' });
     }
     
